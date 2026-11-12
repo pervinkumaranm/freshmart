@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FreshMart — Fresh Groceries Delivered</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<!-- Loading Screen -->
+<div id="loader">
+  <div class="loader-inner">
+    <div class="loader-leaf">🌿</div>
+    <p>FreshMart</p>
+    <div class="loader-bar"><span></span></div>
+  </div>
+</div>
+
+<!-- Navigation -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">🛒</span>
+      <span class="logo-text">Fresh<strong>Mart</strong></span>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li class="has-dropdown">
+        <a href="products.html">Products <i class="fa fa-chevron-down"></i></a>
+        <ul class="dropdown">
+          <li><a href="products.html?cat=fruits">🍎 Fruits & Veggies</a></li>
+          <li><a href="products.html?cat=dairy">🥛 Dairy & Eggs</a></li>
+          <li><a href="products.html?cat=bakery">🍞 Bakery</a></li>
+          <li><a href="products.html?cat=meat">🥩 Meat & Seafood</a></li>
+          <li><a href="products.html?cat=beverages">🧃 Beverages</a></li>
+          <li><a href="products.html?cat=snacks">🍿 Snacks</a></li>
+        </ul>
+      </li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search products..." autocomplete="off" />
+        <i class="fa fa-search search-icon"></i>
+        <div class="search-results" id="searchResults"></div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="Toggle dark mode">
+        <i class="fa fa-moon"></i>
+      </button>
+      <a href="cart.html" class="cart-btn">
+        <i class="fa fa-shopping-cart"></i>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </a>
+      <button class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <span class="hero-tag">🌿 Farm Fresh, Delivered Daily</span>
+      <h1>The Freshest<br /><em>Groceries</em><br />At Your Door</h1>
+      <p>Shop from over 5,000 products handpicked for quality. Free delivery on orders above ₹499.</p>
+      <div class="hero-cta">
+        <a href="products.html" class="btn btn-primary">Shop Now <i class="fa fa-arrow-right"></i></a>
+        <a href="#featured" class="btn btn-outline">Explore Deals</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><strong>5K+</strong><span>Products</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><strong>50K+</strong><span>Happy Customers</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><strong>4.9★</strong><span>Rating</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-circle"></div>
+      <div class="floating-cards">
+        <div class="float-card fc1">🍓 Strawberries <span>₹89</span></div>
+        <div class="float-card fc2">🥑 Avocados <span>₹149</span></div>
+        <div class="float-card fc3">🥦 Broccoli <span>₹49</span></div>
+      </div>
+      <div class="hero-emoji-grid">
+        <span>🍎</span><span>🥕</span><span>🍋</span>
+        <span>🥬</span><span>🍇</span><span>🍊</span>
+        <span>🥝</span><span>🫐</span><span>🍑</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll"><i class="fa fa-chevron-down"></i></div>
+</section>
+
+<!-- Categories Strip -->
+<section class="categories-strip">
+  <div class="container">
+    <div class="cat-list">
+      <a href="products.html?cat=fruits" class="cat-pill">🍎 Fruits & Veggies</a>
+      <a href="products.html?cat=dairy" class="cat-pill">🥛 Dairy & Eggs</a>
+      <a href="products.html?cat=bakery" class="cat-pill">🍞 Bakery</a>
+      <a href="products.html?cat=meat" class="cat-pill">🥩 Meat</a>
+      <a href="products.html?cat=beverages" class="cat-pill">🧃 Beverages</a>
+      <a href="products.html?cat=snacks" class="cat-pill">🍿 Snacks</a>
+    </div>
+  </div>
+</section>
+
+<!-- Offers Banner -->
+<section class="offers-banner">
+  <div class="container">
+    <div class="offers-grid">
+      <div class="offer-card offer-main">
+        <div class="offer-text">
+          <span class="offer-tag">Limited Time</span>
+          <h2>Flat 30% OFF<br/>on Fresh Fruits</h2>
+          <a href="products.html?cat=fruits" class="btn btn-white">Grab Deal</a>
+        </div>
+        <div class="offer-emoji">🍓🍊🍋</div>
+      </div>
+      <div class="offer-card offer-sm">
+        <span class="offer-tag">New Arrival</span>
+        <h3>Organic Dairy</h3>
+        <p>Farm-fresh, no additives</p>
+        <a href="products.html?cat=dairy" class="btn btn-sm">Shop →</a>
+        <div class="offer-bg-emoji">🥛</div>
+      </div>
+      <div class="offer-card offer-sm offer-dark">
+        <span class="offer-tag">Weekend Special</span>
+        <h3>BBQ Bundle</h3>
+        <p>Meat + spices + sauces</p>
+        <a href="products.html?cat=meat" class="btn btn-sm">Shop →</a>
+        <div class="offer-bg-emoji">🥩</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Products -->
+<section class="featured" id="featured">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Top Picks</span>
+      <h2>Featured <em>Products</em></h2>
+      <a href="products.html" class="see-all">See All <i class="fa fa-arrow-right"></i></a>
+    </div>
+    <div class="products-grid" id="featuredGrid">
+      <!-- JS injected -->
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="why-us">
+  <div class="container">
+    <div class="section-header centered">
+      <span class="section-tag">Why FreshMart</span>
+      <h2>Everything You Need,<br/><em>Nothing You Don't</em></h2>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feat-icon">🚚</div>
+        <h3>Same-Day Delivery</h3>
+        <p>Order before 2PM and get your groceries by evening, fresh and on time.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon">🌿</div>
+        <h3>100% Organic</h3>
+        <p>All our produce is sourced from certified organic farms with no pesticides.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon">💳</div>
+        <h3>Secure Payments</h3>
+        <p>Multiple payment options with bank-grade encryption for your safety.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon">🔄</div>
+        <h3>Easy Returns</h3>
+        <p>Not satisfied? Return within 24 hours, no questions asked.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-header centered">
+      <span class="section-tag">Reviews</span>
+      <h2>What Our <em>Customers</em> Say</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"The freshness of the vegetables is unmatched. I've been ordering every week for 6 months!"</p>
+        <div class="testi-author"><span class="testi-avatar">P</span><strong>Priya M.</strong></div>
+      </div>
+      <div class="testi-card featured-testi">
+        <div class="stars">★★★★★</div>
+        <p>"Super fast delivery and the app is so easy to use. The organic fruits are absolutely delicious and fresh."</p>
+        <div class="testi-author"><span class="testi-avatar">R</span><strong>Rahul K.</strong></div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★☆</div>
+        <p>"Great selection, competitive prices, and the customer service team resolved my issue in minutes."</p>
+        <div class="testi-author"><span class="testi-avatar">S</span><strong>Sneha A.</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">🛒 Fresh<strong>Mart</strong></a>
+        <p>Your neighborhood supermarket, now online. Fresh produce, great prices, delivered to your doorstep.</p>
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="products.html?cat=fruits">Fruits & Veggies</a></li>
+          <li><a href="products.html?cat=dairy">Dairy & Eggs</a></li>
+          <li><a href="products.html?cat=bakery">Bakery</a></li>
+          <li><a href="products.html?cat=meat">Meat & Seafood</a></li>
+          <li><a href="products.html?cat=beverages">Beverages</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p><i class="fa fa-map-marker-alt"></i> 12 Market Street, Chennai, TN</p>
+        <p><i class="fa fa-phone"></i> +91 98765 43210</p>
+        <p><i class="fa fa-envelope"></i> hello@freshmart.in</p>
+        <div class="app-badges">
+          <a href="#" class="badge-btn">📱 App Store</a>
+          <a href="#" class="badge-btn">🤖 Play Store</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 FreshMart. All rights reserved.</p>
+      <p>Made with 💚 for fresh living</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Toast Notification -->
+<div id="toast" class="toast"></div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

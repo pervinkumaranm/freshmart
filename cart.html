@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cart — FreshMart</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<div id="loader"><div class="loader-inner"><div class="loader-leaf">🌿</div><p>FreshMart</p><div class="loader-bar"><span></span></div></div></div>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo"><span class="logo-icon">🛒</span><span class="logo-text">Fresh<strong>Mart</strong></span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li class="has-dropdown"><a href="products.html">Products <i class="fa fa-chevron-down"></i></a>
+        <ul class="dropdown">
+          <li><a href="products.html?cat=fruits">🍎 Fruits & Veggies</a></li>
+          <li><a href="products.html?cat=dairy">🥛 Dairy & Eggs</a></li>
+          <li><a href="products.html?cat=bakery">🍞 Bakery</a></li>
+          <li><a href="products.html?cat=meat">🥩 Meat & Seafood</a></li>
+          <li><a href="products.html?cat=beverages">🧃 Beverages</a></li>
+          <li><a href="products.html?cat=snacks">🍿 Snacks</a></li>
+        </ul>
+      </li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search products..." autocomplete="off" />
+        <i class="fa fa-search search-icon"></i>
+        <div class="search-results" id="searchResults"></div>
+      </div>
+      <button class="theme-toggle" id="themeToggle"><i class="fa fa-moon"></i></button>
+      <a href="cart.html" class="cart-btn active"><i class="fa fa-shopping-cart"></i><span class="cart-badge" id="cartBadge">0</span></a>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <h1>Your <em>Cart</em></h1>
+    <p>Review your items and proceed to checkout</p>
+    <nav class="breadcrumb"><a href="index.html">Home</a> <i class="fa fa-chevron-right"></i> <span>Cart</span></nav>
+  </div>
+</div>
+
+<section class="cart-page">
+  <div class="container">
+    <!-- Empty Cart State -->
+    <div id="emptyCart" class="empty-cart" style="display:none">
+      <div class="empty-cart-icon">🛒</div>
+      <h2>Your cart is empty</h2>
+      <p>Looks like you haven't added any items yet. Let's change that!</p>
+      <a href="products.html" class="btn btn-primary">Start Shopping</a>
+    </div>
+
+    <!-- Cart Content -->
+    <div id="cartContent" class="cart-layout">
+      <!-- Cart Items -->
+      <div class="cart-items-section">
+        <div class="cart-header-row">
+          <h3>Cart Items (<span id="cartItemCount">0</span>)</h3>
+          <button id="clearCartBtn" class="clear-btn"><i class="fa fa-trash"></i> Clear All</button>
+        </div>
+        <div id="cartItemsList">
+          <!-- Injected by JS -->
+        </div>
+      </div>
+
+      <!-- Order Summary -->
+      <div class="order-summary">
+        <h3>Order Summary</h3>
+        <div class="summary-rows">
+          <div class="summary-row"><span>Subtotal</span><span id="subtotal">₹0</span></div>
+          <div class="summary-row"><span>Delivery Fee</span><span id="deliveryFee">₹49</span></div>
+          <div class="summary-row discount-row" id="discountRow" style="display:none">
+            <span>Discount</span><span id="discountAmt" class="discount-text">-₹0</span>
+          </div>
+          <div class="summary-divider"></div>
+          <div class="summary-row total-row"><span>Total</span><span id="totalPrice">₹0</span></div>
+        </div>
+
+        <div class="coupon-box">
+          <input type="text" id="couponInput" placeholder="Enter coupon code" />
+          <button id="applyCoupon" class="btn btn-sm">Apply</button>
+        </div>
+        <p class="coupon-hint">Try: FRESH10, SAVE20, FIRSTBUY</p>
+
+        <button class="btn btn-primary btn-full" id="checkoutBtn">
+          <i class="fa fa-lock"></i> Proceed to Checkout
+        </button>
+        <a href="products.html" class="continue-shopping">
+          <i class="fa fa-arrow-left"></i> Continue Shopping
+        </a>
+
+        <div class="payment-icons">
+          <span>💳</span><span>🏦</span><span>📱</span>
+          <p>Secured by 256-bit SSL encryption</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Checkout Modal -->
+<div id="checkoutModal" class="modal-overlay" style="display:none">
+  <div class="modal">
+    <div class="modal-success">
+      <div class="success-icon">✅</div>
+      <h2>Order Placed Successfully!</h2>
+      <p>Thank you for shopping with FreshMart. Your order will be delivered within 2–4 hours.</p>
+      <p class="order-id">Order ID: #<span id="orderId"></span></p>
+      <button class="btn btn-primary" onclick="closeModal()">Continue Shopping</button>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="index.html" class="logo">🛒 Fresh<strong>Mart</strong></a><p>Your neighborhood supermarket, now online.</p><div class="social-links"><a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a><a href="#" class="social-link"><i class="fab fa-instagram"></i></a></div></div>
+      <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-links"><h4>Categories</h4><ul><li><a href="products.html?cat=fruits">Fruits & Veggies</a></li><li><a href="products.html?cat=dairy">Dairy & Eggs</a></li><li><a href="products.html?cat=bakery">Bakery</a></li></ul></div>
+      <div class="footer-contact"><h4>Contact Us</h4><p><i class="fa fa-map-marker-alt"></i> 12 Market Street, Chennai</p><p><i class="fa fa-phone"></i> +91 98765 43210</p></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 FreshMart. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<div id="toast" class="toast"></div>
+<script src="js/script.js"></script>
+</body>
+</html>

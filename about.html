@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — FreshMart</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<div id="loader"><div class="loader-inner"><div class="loader-leaf">🌿</div><p>FreshMart</p><div class="loader-bar"><span></span></div></div></div>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo"><span class="logo-icon">🛒</span><span class="logo-text">Fresh<strong>Mart</strong></span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li class="has-dropdown"><a href="products.html">Products <i class="fa fa-chevron-down"></i></a>
+        <ul class="dropdown"><li><a href="products.html?cat=fruits">🍎 Fruits & Veggies</a></li><li><a href="products.html?cat=dairy">🥛 Dairy & Eggs</a></li><li><a href="products.html?cat=bakery">🍞 Bakery</a></li><li><a href="products.html?cat=meat">🥩 Meat & Seafood</a></li></ul>
+      </li>
+      <li><a href="about.html" class="active">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <div class="search-box"><input type="text" id="searchInput" placeholder="Search products..." autocomplete="off" /><i class="fa fa-search search-icon"></i><div class="search-results" id="searchResults"></div></div>
+      <button class="theme-toggle" id="themeToggle"><i class="fa fa-moon"></i></button>
+      <a href="cart.html" class="cart-btn"><i class="fa fa-shopping-cart"></i><span class="cart-badge" id="cartBadge">0</span></a>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <h1>About <em>Us</em></h1>
+    <p>Our story, mission, and the people behind FreshMart</p>
+    <nav class="breadcrumb"><a href="index.html">Home</a> <i class="fa fa-chevron-right"></i> <span>About Us</span></nav>
+  </div>
+</div>
+
+<!-- Our Story -->
+<section class="about-story">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <span class="section-tag">Our Story</span>
+        <h2>From Farm to Your <em>Doorstep</em></h2>
+        <p>FreshMart was founded in 2018 with a simple mission: make fresh, organic groceries accessible to everyone. What started as a small local delivery service in Chennai has grown into a platform serving over 50,000 families across Tamil Nadu.</p>
+        <p>We partner directly with 200+ certified organic farmers, cutting out the middlemen so you get the freshest produce at fair prices — and farmers get a better livelihood.</p>
+        <div class="about-values">
+          <div class="value-item"><i class="fa fa-leaf"></i> <span>Sustainability First</span></div>
+          <div class="value-item"><i class="fa fa-handshake"></i> <span>Farmer Partnerships</span></div>
+          <div class="value-item"><i class="fa fa-heart"></i> <span>Community Focused</span></div>
+        </div>
+      </div>
+      <div class="about-visual">
+        <div class="about-img-placeholder">
+          <div class="about-emoji-grid">
+            <span>🌾</span><span>🚜</span><span>👨‍🌾</span>
+            <span>🌿</span><span>🏪</span><span>🚚</span>
+            <span>🏡</span><span>👨‍👩‍👧</span><span>😊</span>
+          </div>
+          <p>Farm → Pack → Deliver → You</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="about-stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-box">
+        <h2>50K+</h2>
+        <p>Happy Customers</p>
+      </div>
+      <div class="stat-box">
+        <h2>200+</h2>
+        <p>Farm Partners</p>
+      </div>
+      <div class="stat-box">
+        <h2>5,000+</h2>
+        <p>Products</p>
+      </div>
+      <div class="stat-box">
+        <h2>8</h2>
+        <p>Cities Served</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section class="team-section">
+  <div class="container">
+    <div class="section-header centered">
+      <span class="section-tag">Meet The Team</span>
+      <h2>The People Behind <em>FreshMart</em></h2>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar">👨‍💼</div>
+        <h3>Arjun Krishnan</h3>
+        <p class="team-role">Founder & CEO</p>
+        <p>Former agricultural engineer with a passion for sustainable food systems and technology.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">👩‍💼</div>
+        <h3>Meera Sundaram</h3>
+        <p class="team-role">Head of Operations</p>
+        <p>10+ years in supply chain management. Ensures every order arrives fresh and on time.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">👨‍🍳</div>
+        <h3>Karthik Rajan</h3>
+        <p class="team-role">Quality Director</p>
+        <p>Certified food scientist who personally curates our product selection and quality standards.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">👩‍💻</div>
+        <h3>Divya Nair</h3>
+        <p class="team-role">Tech Lead</p>
+        <p>Builds the platform that powers seamless ordering for over 50,000 daily customers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mission -->
+<section class="mission-section">
+  <div class="container">
+    <div class="mission-content">
+      <h2>Our Mission & <em>Values</em></h2>
+      <div class="mission-grid">
+        <div class="mission-card">
+          <div class="mission-icon">🌍</div>
+          <h3>Sustainability</h3>
+          <p>We use eco-friendly packaging and optimize delivery routes to minimize our carbon footprint.</p>
+        </div>
+        <div class="mission-card">
+          <div class="mission-icon">🤝</div>
+          <h3>Farmer Welfare</h3>
+          <p>We pay farmers 20% above market rate and provide advance payments to support their livelihoods.</p>
+        </div>
+        <div class="mission-card">
+          <div class="mission-icon">✅</div>
+          <h3>Quality Promise</h3>
+          <p>Every product is inspected and tested. If it's not fresh, we replace it — guaranteed.</p>
+        </div>
+        <div class="mission-card">
+          <div class="mission-icon">💡</div>
+          <h3>Innovation</h3>
+          <p>We use technology to track freshness from farm to delivery so you always get the best.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="index.html" class="logo">🛒 Fresh<strong>Mart</strong></a><p>Your neighborhood supermarket, now online.</p><div class="social-links"><a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a><a href="#" class="social-link"><i class="fab fa-instagram"></i></a><a href="#" class="social-link"><i class="fab fa-twitter"></i></a></div></div>
+      <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li><li><a href="cart.html">Cart</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-links"><h4>Categories</h4><ul><li><a href="products.html?cat=fruits">Fruits & Veggies</a></li><li><a href="products.html?cat=dairy">Dairy & Eggs</a></li><li><a href="products.html?cat=bakery">Bakery</a></li><li><a href="products.html?cat=meat">Meat & Seafood</a></li></ul></div>
+      <div class="footer-contact"><h4>Contact Us</h4><p><i class="fa fa-map-marker-alt"></i> 12 Market Street, Chennai</p><p><i class="fa fa-phone"></i> +91 98765 43210</p><p><i class="fa fa-envelope"></i> hello@freshmart.in</p></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 FreshMart. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<div id="toast" class="toast"></div>
+<script src="js/script.js"></script>
+</body>
+</html>
